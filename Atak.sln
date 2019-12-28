@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atak", "Atak\Atak.csproj", "{56234CDB-7DDE-449E-8932-0F95E498B0E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtakCL", "AtakCL\AtakCL.csproj", "{B3897779-F227-4B82-976D-0DF016003304}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56234CDB-7DDE-449E-8932-0F95E498B0E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56234CDB-7DDE-449E-8932-0F95E498B0E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56234CDB-7DDE-449E-8932-0F95E498B0E6}.Debug|x64.ActiveCfg = Debug|x64
+		{56234CDB-7DDE-449E-8932-0F95E498B0E6}.Debug|x64.Build.0 = Debug|x64
+		{56234CDB-7DDE-449E-8932-0F95E498B0E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56234CDB-7DDE-449E-8932-0F95E498B0E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56234CDB-7DDE-449E-8932-0F95E498B0E6}.Release|x64.ActiveCfg = Release|x64
+		{56234CDB-7DDE-449E-8932-0F95E498B0E6}.Release|x64.Build.0 = Release|x64
+		{B3897779-F227-4B82-976D-0DF016003304}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3897779-F227-4B82-976D-0DF016003304}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3897779-F227-4B82-976D-0DF016003304}.Debug|x64.ActiveCfg = Debug|x64
+		{B3897779-F227-4B82-976D-0DF016003304}.Debug|x64.Build.0 = Debug|x64
+		{B3897779-F227-4B82-976D-0DF016003304}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3897779-F227-4B82-976D-0DF016003304}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3897779-F227-4B82-976D-0DF016003304}.Release|x64.ActiveCfg = Release|x64
+		{B3897779-F227-4B82-976D-0DF016003304}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {550EEB3B-9F5F-486F-8F62-33159717B1C9}
+	EndGlobalSection
+EndGlobal

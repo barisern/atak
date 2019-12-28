@@ -1,0 +1,9 @@
+C:\Users\Admin\source\repos\Atak\Atak\bin\Debug\Atak.exe.config
+C:\Users\Admin\source\repos\Atak\Atak\bin\Debug\Atak.exe
+C:\Users\Admin\source\repos\Atak\Atak\bin\Debug\Atak.pdb
+C:\Users\Admin\source\repos\Atak\Atak\obj\Debug\Atak.MainForm.resources
+C:\Users\Admin\source\repos\Atak\Atak\obj\Debug\Atak.Message.resources
+C:\Users\Admin\source\repos\Atak\Atak\obj\Debug\Atak.Properties.Resources.resources
+C:\Users\Admin\source\repos\Atak\Atak\obj\Debug\Atak.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\Atak\Atak\obj\Debug\Atak.exe
+C:\Users\Admin\source\repos\Atak\Atak\obj\Debug\Atak.pdb

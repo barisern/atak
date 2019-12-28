@@ -1,0 +1,5 @@
+C:\Users\Admin\source\repos\Atak\AtakCL\bin\Debug\AtakCL.exe.config
+C:\Users\Admin\source\repos\Atak\AtakCL\bin\Debug\AtakCL.exe
+C:\Users\Admin\source\repos\Atak\AtakCL\bin\Debug\AtakCL.pdb
+C:\Users\Admin\source\repos\Atak\AtakCL\obj\Debug\AtakCL.exe
+C:\Users\Admin\source\repos\Atak\AtakCL\obj\Debug\AtakCL.pdb
