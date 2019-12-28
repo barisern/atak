@@ -34,16 +34,17 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuList = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.sendMessageBoxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.watchScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uploadFileAndRunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sendCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.closeServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visitSiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.disableDefenderAdminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.getProcessesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuList.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +85,11 @@
             this.columnHeader4.Text = "OS";
             this.columnHeader4.Width = 152;
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Anti";
+            this.columnHeader5.Width = 151;
+            // 
             // contextMenuList
             // 
             this.contextMenuList.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -94,62 +100,52 @@
             this.sendCodeToolStripMenuItem,
             this.closeServerToolStripMenuItem,
             this.visitSiteToolStripMenuItem,
-            this.disableDefenderAdminToolStripMenuItem});
+            this.disableDefenderAdminToolStripMenuItem,
+            this.getProcessesToolStripMenuItem});
             this.contextMenuList.Name = "contextMenuList";
-            this.contextMenuList.Size = new System.Drawing.Size(253, 200);
+            this.contextMenuList.Size = new System.Drawing.Size(253, 224);
             // 
             // sendMessageBoxToolStripMenuItem
             // 
             this.sendMessageBoxToolStripMenuItem.Name = "sendMessageBoxToolStripMenuItem";
-            this.sendMessageBoxToolStripMenuItem.Size = new System.Drawing.Size(212, 24);
+            this.sendMessageBoxToolStripMenuItem.Size = new System.Drawing.Size(252, 24);
             this.sendMessageBoxToolStripMenuItem.Text = "Send MessageBox";
             this.sendMessageBoxToolStripMenuItem.Click += new System.EventHandler(this.sendMessageBoxToolStripMenuItem_Click);
             // 
             // watchScreenToolStripMenuItem
             // 
             this.watchScreenToolStripMenuItem.Name = "watchScreenToolStripMenuItem";
-            this.watchScreenToolStripMenuItem.Size = new System.Drawing.Size(212, 24);
+            this.watchScreenToolStripMenuItem.Size = new System.Drawing.Size(252, 24);
             this.watchScreenToolStripMenuItem.Text = "Watch Screen";
             this.watchScreenToolStripMenuItem.Click += new System.EventHandler(this.watchScreenToolStripMenuItem_Click);
             // 
             // uploadFileAndRunToolStripMenuItem
             // 
             this.uploadFileAndRunToolStripMenuItem.Name = "uploadFileAndRunToolStripMenuItem";
-            this.uploadFileAndRunToolStripMenuItem.Size = new System.Drawing.Size(212, 24);
+            this.uploadFileAndRunToolStripMenuItem.Size = new System.Drawing.Size(252, 24);
             this.uploadFileAndRunToolStripMenuItem.Text = "Upload File and Run";
             this.uploadFileAndRunToolStripMenuItem.Click += new System.EventHandler(this.uploadFileAndRunToolStripMenuItem_Click);
-            // 
-            // closeServerToolStripMenuItem
-            // 
-            this.closeServerToolStripMenuItem.Name = "closeServerToolStripMenuItem";
-            this.closeServerToolStripMenuItem.Size = new System.Drawing.Size(212, 24);
-            this.closeServerToolStripMenuItem.Text = "Close Server";
-            this.closeServerToolStripMenuItem.Click += new System.EventHandler(this.closeServerToolStripMenuItem_Click);
             // 
             // sendCodeToolStripMenuItem
             // 
             this.sendCodeToolStripMenuItem.Name = "sendCodeToolStripMenuItem";
-            this.sendCodeToolStripMenuItem.Size = new System.Drawing.Size(212, 24);
+            this.sendCodeToolStripMenuItem.Size = new System.Drawing.Size(252, 24);
             this.sendCodeToolStripMenuItem.Text = "Run .NET code ";
             this.sendCodeToolStripMenuItem.Click += new System.EventHandler(this.sendCodeToolStripMenuItem_Click);
             // 
-            // timer1
+            // closeServerToolStripMenuItem
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.closeServerToolStripMenuItem.Name = "closeServerToolStripMenuItem";
+            this.closeServerToolStripMenuItem.Size = new System.Drawing.Size(252, 24);
+            this.closeServerToolStripMenuItem.Text = "Close Server";
+            this.closeServerToolStripMenuItem.Click += new System.EventHandler(this.closeServerToolStripMenuItem_Click);
             // 
             // visitSiteToolStripMenuItem
             // 
             this.visitSiteToolStripMenuItem.Name = "visitSiteToolStripMenuItem";
-            this.visitSiteToolStripMenuItem.Size = new System.Drawing.Size(212, 24);
+            this.visitSiteToolStripMenuItem.Size = new System.Drawing.Size(252, 24);
             this.visitSiteToolStripMenuItem.Text = "Visit Site";
             this.visitSiteToolStripMenuItem.Click += new System.EventHandler(this.visitSiteToolStripMenuItem_Click);
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Anti";
-            this.columnHeader5.Width = 151;
             // 
             // disableDefenderAdminToolStripMenuItem
             // 
@@ -157,6 +153,19 @@
             this.disableDefenderAdminToolStripMenuItem.Size = new System.Drawing.Size(252, 24);
             this.disableDefenderAdminToolStripMenuItem.Text = "Disable Defender (Admin)";
             this.disableDefenderAdminToolStripMenuItem.Click += new System.EventHandler(this.disableDefenderAdminToolStripMenuItem_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // getProcessesToolStripMenuItem
+            // 
+            this.getProcessesToolStripMenuItem.Name = "getProcessesToolStripMenuItem";
+            this.getProcessesToolStripMenuItem.Size = new System.Drawing.Size(252, 24);
+            this.getProcessesToolStripMenuItem.Text = "Get Processes";
+            this.getProcessesToolStripMenuItem.Click += new System.EventHandler(this.getProcessesToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -189,6 +198,7 @@
         private System.Windows.Forms.ToolStripMenuItem visitSiteToolStripMenuItem;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ToolStripMenuItem disableDefenderAdminToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem getProcessesToolStripMenuItem;
     }
 }
 

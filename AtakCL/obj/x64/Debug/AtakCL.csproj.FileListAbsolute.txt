@@ -4,3 +4,8 @@ C:\Users\Admin\source\repos\Atak\AtakCL\bin\x64\Debug\AtakCL.pdb
 C:\Users\Admin\source\repos\Atak\AtakCL\obj\x64\Debug\AtakCL.exe
 C:\Users\Admin\source\repos\Atak\AtakCL\obj\x64\Debug\AtakCL.pdb
 C:\Users\Admin\source\repos\Atak\AtakCL\obj\x64\Debug\AtakCL.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\atak\AtakCL\bin\x64\Debug\AtakCL.exe.config
+C:\Users\Admin\Documents\GitHub\atak\AtakCL\bin\x64\Debug\AtakCL.exe
+C:\Users\Admin\Documents\GitHub\atak\AtakCL\bin\x64\Debug\AtakCL.pdb
+C:\Users\Admin\Documents\GitHub\atak\AtakCL\obj\x64\Debug\AtakCL.exe
+C:\Users\Admin\Documents\GitHub\atak\AtakCL\obj\x64\Debug\AtakCL.pdb

