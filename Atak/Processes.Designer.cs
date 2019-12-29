@@ -47,7 +47,7 @@
             this.startNewProcessToolStripMenuItem,
             this.refreshToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(197, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 104);
             // 
             // killToolStripMenuItem
             // 
@@ -75,10 +75,12 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
+            this.listView1.ContextMenuStrip = this.contextMenuStrip1;
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 12);
+            this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(358, 426);
+            this.listView1.Size = new System.Drawing.Size(628, 457);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -86,18 +88,18 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Name";
-            this.columnHeader1.Width = 188;
+            this.columnHeader1.Width = 308;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "pID";
-            this.columnHeader2.Width = 164;
+            this.columnHeader2.Width = 315;
             // 
             // Processes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 450);
+            this.ClientSize = new System.Drawing.Size(628, 457);
             this.Controls.Add(this.listView1);
             this.Name = "Processes";
             this.Text = "Processes";

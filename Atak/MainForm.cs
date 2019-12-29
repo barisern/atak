@@ -23,6 +23,7 @@ namespace Atak
 
         public MainForm()
         {
+            CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
         }
         private void MainForm_Load(object sender, EventArgs e)
@@ -95,17 +96,33 @@ namespace Atak
                         }
                         GC.Collect();
                         break;
-                    case "PPPNUM":
-                        CheckForIllegalCrossThreadCalls = false;
+                    case "PPPNUM":                       
                         pNum = Convert.ToInt32(sData[1]);
-                        break;
-                    case "PPP":
-                        for (int i = 1; i <= pNum; i++) //TODO : FIX RESPONSE AND ADD LISTVIEW
+
+                        byte[] buf2 = new byte[short.MaxValue];
+                        socket.Receive(buf2, buf2.Length, SocketFlags.None);
+                        string data2 = Encoding.UTF8.GetString(buf2, 0, buf2.Length);
+                        string[] sData2 = data2.Split('|');
+
+                        string[] pName = new string[sData2.Length];
+                        string[] pID = new string[sData2.Length];
+                        for (int i = 0; i < sData2.Length / 2; i++)
                         {
-                            ListViewItem item = new ListViewItem(sData[i * 2 - 1]);
-                            item.SubItems.Add(sData[i * 2]);
+                            pName[i] = sData2[i * 2];
+                            if (i >= 1)
+                                pID[i] = sData2[i * 2 + 1];   
+                            else
+                                pID[i] = sData2[1];
+                        }
+                        for (int i = 0; i < pNum; i++)
+                        {
+                            ListViewItem item = new ListViewItem(pName[i]);
+                            item.SubItems.Add(pID[i]);
                             ((Processes)(Application.OpenForms["Processes"])).listView1.Items.Add(item);
                         }
+                        break;
+                    case "PPP":
+
                         break;
                 }
 

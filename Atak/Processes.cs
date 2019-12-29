@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,18 +22,19 @@ namespace Atak
         }
 
         private void Processes_Load(object sender, EventArgs e)
-        {
+        {         
             refresh();
         }
 
         private void killToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            //TODO : MAKE KILL REQ AND RESPONSE
         }
 
         private void startNewProcessToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            string path = Interaction.InputBox("App path for start", "Atak");
+            socket.Send(Encoding.UTF8.GetBytes("START|" + path));
         }
 
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,6 +44,7 @@ namespace Atak
 
         void refresh()
         {
+            listView1.Items.Clear();
             socket.Send(Encoding.UTF8.GetBytes("GETPRC"));
         }
     }

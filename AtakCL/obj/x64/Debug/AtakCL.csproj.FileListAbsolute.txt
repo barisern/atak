@@ -9,3 +9,4 @@ C:\Users\Admin\Documents\GitHub\atak\AtakCL\bin\x64\Debug\AtakCL.exe
 C:\Users\Admin\Documents\GitHub\atak\AtakCL\bin\x64\Debug\AtakCL.pdb
 C:\Users\Admin\Documents\GitHub\atak\AtakCL\obj\x64\Debug\AtakCL.exe
 C:\Users\Admin\Documents\GitHub\atak\AtakCL\obj\x64\Debug\AtakCL.pdb
+C:\Users\Admin\Documents\GitHub\atak\AtakCL\obj\x64\Debug\AtakCL.csprojAssemblyReference.cache
