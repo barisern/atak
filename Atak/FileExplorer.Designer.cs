@@ -30,21 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.foldersStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.createFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.filesStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.downloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.foldersStrip.SuspendLayout();
+            this.filesStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
             // 
-            this.listBox1.ContextMenuStrip = this.contextMenuStrip1;
+            this.listBox1.ContextMenuStrip = this.foldersStrip;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(6, 21);
@@ -52,6 +59,21 @@
             this.listBox1.Size = new System.Drawing.Size(364, 356);
             this.listBox1.TabIndex = 0;
             this.listBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
+            // 
+            // foldersStrip
+            // 
+            this.foldersStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.foldersStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createFolderToolStripMenuItem});
+            this.foldersStrip.Name = "contextMenuStrip1";
+            this.foldersStrip.Size = new System.Drawing.Size(168, 28);
+            // 
+            // createFolderToolStripMenuItem
+            // 
+            this.createFolderToolStripMenuItem.Name = "createFolderToolStripMenuItem";
+            this.createFolderToolStripMenuItem.Size = new System.Drawing.Size(167, 24);
+            this.createFolderToolStripMenuItem.Text = "Create Folder";
+            this.createFolderToolStripMenuItem.Click += new System.EventHandler(this.createFolderToolStripMenuItem_Click);
             // 
             // txtPath
             // 
@@ -79,20 +101,46 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // listBox2
             // 
+            this.listBox2.ContextMenuStrip = this.filesStrip;
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 16;
             this.listBox2.Location = new System.Drawing.Point(6, 21);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(379, 356);
             this.listBox2.TabIndex = 0;
+            // 
+            // filesStrip
+            // 
+            this.filesStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.filesStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.startToolStripMenuItem,
+            this.downloadToolStripMenuItem,
+            this.createFileToolStripMenuItem});
+            this.filesStrip.Name = "filesStrip";
+            this.filesStrip.Size = new System.Drawing.Size(211, 104);
+            // 
+            // startToolStripMenuItem
+            // 
+            this.startToolStripMenuItem.Name = "startToolStripMenuItem";
+            this.startToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.startToolStripMenuItem.Text = "Start";
+            this.startToolStripMenuItem.Click += new System.EventHandler(this.startToolStripMenuItem_Click);
+            // 
+            // downloadToolStripMenuItem
+            // 
+            this.downloadToolStripMenuItem.Name = "downloadToolStripMenuItem";
+            this.downloadToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.downloadToolStripMenuItem.Text = "Download";
+            this.downloadToolStripMenuItem.Click += new System.EventHandler(this.downloadToolStripMenuItem_Click);
+            // 
+            // createFileToolStripMenuItem
+            // 
+            this.createFileToolStripMenuItem.Name = "createFileToolStripMenuItem";
+            this.createFileToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.createFileToolStripMenuItem.Text = "Create File";
+            this.createFileToolStripMenuItem.Click += new System.EventHandler(this.createFileToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -138,6 +186,8 @@
             this.Name = "FileExplorer";
             this.Text = "FileExplorer";
             this.Load += new System.EventHandler(this.FileExplorer_Load);
+            this.foldersStrip.ResumeLayout(false);
+            this.filesStrip.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -151,10 +201,15 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ContextMenuStrip foldersStrip;
         public System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ContextMenuStrip filesStrip;
+        private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem downloadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createFolderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createFileToolStripMenuItem;
     }
 }

